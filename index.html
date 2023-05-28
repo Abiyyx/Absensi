@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Absensi Siswa</title>
+    <style>
+        /* Tambahkan gaya CSS sesuai kebutuhan */
+    </style>
+</head>
+<body>
+    <?php
+    // Pemeriksaan halaman yang sedang aktif
+    $currentPage = isset($_GET['page']) ? $_GET['page'] : '';
+
+    // Menampilkan halaman sesuai dengan halaman yang sedang aktif
+    if ($currentPage === 'login') {
+        include('login.php');
+    } elseif ($currentPage === 'pilih_jadwal') {
+        include('pilih_jadwal.php');
+    } elseif ($currentPage === 'isi_absen') {
+        include('isi_absen.php');
+    } elseif ($currentPage === 'konfirmasi_absen') {
+        include('konfirmasi_absen.php');
+    } elseif ($currentPage === 'tampil_absen') {
+        include('tampil_absen.php');
+    } else {
+        // Halaman default, misalnya beranda atau halaman lainnya
+        echo "<h1>Selamat Datang di Absensi Siswa</h1>";
+        echo "<p>Silakan <a href='?page=login'>login</a> untuk mengakses halaman absensi.</p>";
+    }
+    ?>
+</body>
+</html>
+
